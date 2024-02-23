@@ -1,0 +1,51 @@
+create Database OPKUSUBE;
+use OPKUSUBE;
+
+Create table tbl_book(
+id int auto_increment primary key,
+BookName Varchar(30),
+Discrition varchar(100),
+Auther Varchar(30),
+SoldBysaller varchar(30) Default "NA",
+PurcsBycustomer varchar (30) default "NA",
+BookStock Varchar(50) Default "20",
+CreateAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+UpdateAt Varchar (50)DEFAULT ("NA") 
+);
+
+select *from tbl_book;
+Drop table tbl_book ;
+
+Create Table tbl_Customer (
+id int auto_increment primary key,
+Name varchar(30),
+PurchaseBook varchar(30) default "NA",
+MobileNo varchar(30),
+Address varchar(50),
+CreateAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+UpdateAt Varchar (50)DEFAULT ("NA") 
+);
+
+Create Table tbl_Saller(
+id int auto_increment primary key,
+SallerName varchar(30),
+Address varchar(40),
+MobileNO varchar(20) unique,
+BookSales varchar(30) default "NA",
+CreateAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+UpdateAt Varchar (50)DEFAULT ("NA") 
+)
+select *from tbl_Saller;
+select *from tbl_book inner Join tbl_Customer on tbl_book.id =tbl_Customer.id;
+select tb.id,tb.BookName,tc.Name from tbl_book tb right join tbl_Customer tc on tb.id =tc.id;
+
+create Table tbl_PurchaseBook(
+OrderID int auto_increment primary key,
+BookName varchar(50),
+CostomerName varchar(50),
+CreateAt DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+delete from tbl_PurchaseBook;
+select *from tbl_PurchaseBook;
+
+
