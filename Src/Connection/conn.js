@@ -3,7 +3,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "root",
-    database : 'OPKUSUBE'
+    database : 'vivek'
 });
 
 con.connect(function (err) {
